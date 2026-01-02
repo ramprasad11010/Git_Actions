@@ -7,7 +7,12 @@ jobs:
     steps:
         - name: Sample output
           run: hostname
-    
+        - name: Install jq tool
+          run: |
+            sudo apt-get update
+            sudo apt-get install terraform
+        - name: Check installation status
+          run: terraform --version
 
 
 
