@@ -2,11 +2,11 @@
 name: My Git actions file
 on: push
 jobs:
-    build:
-        runs on: ubuntu-latest
-        steps:
-            - name: Sample output
-              run: hostname
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Sample output
+          run: hostname
     
 
 
