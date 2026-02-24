@@ -3,16 +3,15 @@ name: My Git actions file
 on: push
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
         - name: Sample output
           run: hostname
-        - name: Install jq tool
-          run: |
-            sudo apt update
-            sudo apt install -y terraform
         - name: Check installation status
           run: terraform --version
+        - name: checkout
+          uses: actions/checkout@v2
+
 
 
 
