@@ -1,5 +1,5 @@
 resource "aws_instance" "server" {
-    ami = "ami-0f3caa1cf4417e51b"
+    ami = "ami-0c1fe732b5494dc14"
     instance_type = "t3.small"
     key_name = "AWS_KP"
     subnet_id = var.subnet_id
