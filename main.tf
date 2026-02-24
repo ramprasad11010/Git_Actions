@@ -22,3 +22,7 @@ module "linux-WebServer2" {
     }
     file = "userdata1.sh"
 }
+
+provider "aws" {
+    region = "us-east-1"
+}
