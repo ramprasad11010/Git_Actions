@@ -11,6 +11,13 @@ jobs:
           run: terraform --version
         - name: checkout
           uses: actions/checkout@v2
+        - name: init terraform
+          run: terraform init
+        - name: plan
+          run: terraform plan
+        - name: apply
+          run: terraform apply
+          
 
 
 
