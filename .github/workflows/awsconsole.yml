@@ -24,9 +24,12 @@ jobs:
       # 4. Standard Terraform Flow
       - name: Terraform Init
         run: terraform init
+
+      - run: ls -a
+      
       - name: Artifacts
         uses: actions/upload-artifact@v4
         with:
             name: Statefile
-            path: terraform.tfstate
+            path: .terraform
         
