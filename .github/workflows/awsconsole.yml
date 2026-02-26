@@ -2,7 +2,7 @@
 name: AWS CLI login in Git hosted runners
 on: push
 jobs:
-  build:
+  login:
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_ID }}
@@ -24,3 +24,8 @@ jobs:
       # 4. Standard Terraform Flow
       - name: Terraform Init
         run: terraform init
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - needs: build
+        uses: ./.github/workflows/First_Action.yml
