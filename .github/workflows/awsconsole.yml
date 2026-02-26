@@ -25,7 +25,7 @@ jobs:
       - name: Terraform Init
         run: terraform init
       - name: Artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
             name: Statefile
             path: terraform.tfstate
