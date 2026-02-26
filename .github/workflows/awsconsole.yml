@@ -11,5 +11,16 @@ jobs:
       - uses: actions/checkout@v2
       - name: list s3 buckets
         run: aws s3 ls
-      - name: Install terraform
-        run: sudo apt update && sudo apt install terraform 
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0" # Best practice: specify a version
+          terraform_wrapper: false   # Set to true if you want to capture output in steps
+
+      # 3. Verify the installation
+      - name: Terraform Version
+        run: terraform --version
+
+      # 4. Standard Terraform Flow
+      - name: Terraform Init
+        run: terraform init
