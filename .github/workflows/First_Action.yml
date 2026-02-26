@@ -3,7 +3,7 @@ name: My Git actions file
 on: push
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
         - name: Sample output
           run: hostname

@@ -1,0 +1,13 @@
+#workflow to login aws cli in git hosted runners
+name: AWS CLI login in Git hosted runners
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: list s3 buckets
+        run: aws s3 ls
