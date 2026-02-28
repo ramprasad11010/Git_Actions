@@ -1,5 +1,5 @@
 module "linux-WebServer" {
-    source = "./WebServer"
+    source = "https://github.com/ramprasad11010/terraform_infra/WebServer"
     public_ip = true
     security_group = [ "sg-08dd381ccb3f46b48" ]
     subnet_id = "subnet-0f11724321edf5faf"
@@ -12,7 +12,7 @@ module "linux-WebServer" {
 
 
 module "linux-WebServer2" {
-    source = "./WebServer"
+    source = "https://github.com/ramprasad11010/terraform_infra/WebServer"
     public_ip = true
     security_group = [ "sg-08dd381ccb3f46b48" ]
     subnet_id = "subnet-0f11724321edf5faf"
