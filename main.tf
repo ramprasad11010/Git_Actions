@@ -1,5 +1,5 @@
 module "linux-WebServer1" {
-    source = "https://github.com/ramprasad11010/terraform_infra.git//WebServer?ref=master"
+    source = "git::https://github.com/ramprasad11010/terraform_infra.git//WebServer?ref=master"
     public_ip = true
     security_group = [ "sg-08dd381ccb3f46b48" ]
     subnet_id = "subnet-0f11724321edf5faf"
@@ -12,7 +12,7 @@ module "linux-WebServer1" {
 
 
 module "linux-WebServer2" {
-    source = "https://github.com/ramprasad11010/terraform_infra.git//WebServer?ref=master"
+    source = "git::https://github.com/ramprasad11010/terraform_infra.git//WebServer?ref=master"
     public_ip = true
     security_group = [ "sg-08dd381ccb3f46b48" ]
     subnet_id = "subnet-0f11724321edf5faf"
