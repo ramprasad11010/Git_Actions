@@ -1,6 +1,6 @@
 #workflow to login aws cli in git hosted runners
 name: AWS CLI login in Git hosted runners
-on: pull_request
+on: workflow_dispatch
 jobs:
   login:
     runs-on: ubuntu-latest
