@@ -1,5 +1,5 @@
 #workflow to login aws cli in git hosted runners
-name: AWS CLI login in Git hosted runners
+name: Destroy terraform
 on: workflow_dispatch
 jobs:
   login:
