@@ -1,0 +1,30 @@
+#workflow to login aws cli in git hosted runners
+name: AWS CLI login in Git hosted runners
+on: pull_request
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.ACCESS_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.ACCESS_KEY }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: list s3 buckets
+        run: aws s3 ls
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.7.0" # Best practice: specify a version
+          terraform_wrapper: false   # Set to true if you want to capture output in steps
+
+      # 3. Verify the installation
+      - name: Terraform Version
+        run: terraform --version
+
+      # 4. Standard Terraform Flow
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Destroy
+        run: terraform destroy --auto-approve
+        
